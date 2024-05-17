@@ -1,1 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Checkout Code') {
+            steps {
+                git branch: 'main', credentialsId: 'ec2-user', url: 'https://github.com/rameshgitexp/terrafom.git'
+            }
+        }
+        stage('Maven Build') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
+        stage('Check Terraform Version') {
+            steps {
+                sh 'terraform --version'
+            }
+        }
+    }
+}
 
