@@ -14,12 +14,12 @@ pipeline {
         }
         stage('Maven Build') {
             steps {
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
         stage('Check Terraform Version') {
             steps {
-                sh 'terraform --version'
+                bat 'terraform --version'
             }
         }
     }
