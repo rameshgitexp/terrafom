@@ -27,12 +27,12 @@ pipeline {
                 bat 'terraform init'
             }
         }
-      stage('Check Terraform plan') {
+      stage('Terraform plan') {
             steps {
                 bat 'terraform plan'
             }
         }
-      stage('Check Terraform apply') {
+      stage('Terraform apply') {
             steps {
                 bat 'terraform apply'
             }
