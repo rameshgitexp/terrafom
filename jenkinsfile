@@ -22,6 +22,21 @@ pipeline {
                 bat 'terraform --version'
             }
         }
+      stage(' Terraform initilation') {
+            steps {
+                bat 'terraform init'
+            }
+        }
+      stage('Check Terraform plan') {
+            steps {
+                bat 'terraform plan'
+            }
+        }
+      stage('Check Terraform apply') {
+            steps {
+                bat 'terraform apply'
+            }
+        }
     }
 }
 
