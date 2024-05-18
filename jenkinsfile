@@ -32,10 +32,5 @@ pipeline {
                 bat 'terraform plan'
             }
         }
-      stage('Terraform apply') {
-            steps {
-                bat 'terraform apply'
-            }
-        }
     }
 }
